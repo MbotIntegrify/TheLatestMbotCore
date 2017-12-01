@@ -12,11 +12,11 @@ var ctx = canvas.getContext("2d");
 
 var i = 0;
 
-//capture.addEventListener("click", function () {
-//    ctx.drawImage(img,0,0,500,330);
-//    containerImg.src = canvas.toDataURL('image/jpeg',1.0);
+capture.addEventListener("click", function () {
+    ctx.drawImage(img,0,0,500,330);
+    containerImg.src = canvas.toDataURL('image/jpeg',1.0);
    
-//});
+});
 
 var img = new Image,
     src = "~/images"; // insert image url here
