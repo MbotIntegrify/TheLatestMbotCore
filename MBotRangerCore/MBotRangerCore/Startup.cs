@@ -31,7 +31,7 @@ namespace MBotRangerCore
         {
           
            
-            services.AddDbContext<MBotRangerCoreContext>(options => options.UseSqlServer(@"Data Source=tcp:integrifydbserver.database.windows.net,1433;Initial Catalog=MBotRangerCore20180205115100_db;Persist Security Info=False;User ID=ahed;Password=ahed123456!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"));
+            services.AddDbContext<MBotRangerCoreContext>(options => options.UseSqlServer(@"Data Source=tcp:integrifydbserver.database.windows.net,1433;Initial Catalog=MBotRangerCore20180205115100_db;Persist Security Info=False;User ID=bratland;Password=SaltedCaramel1!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"));
             services.AddIdentity<ApplicationUser, IdentityRole>(config =>
             {
                 config.SignIn.RequireConfirmedEmail = false;
@@ -49,6 +49,8 @@ namespace MBotRangerCore
                 options.Password.RequiredUniqueChars = 1;              
 
             });
+
+            services.BuildServiceProvider().GetService<MBotRangerCoreContext>().Database.Migrate();
 
             services.Configure<SecurityStampValidatorOptions>(options =>
             options.ValidationInterval = TimeSpan.FromSeconds(1)
