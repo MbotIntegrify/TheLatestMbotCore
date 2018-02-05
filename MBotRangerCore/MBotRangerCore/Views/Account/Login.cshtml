@@ -29,6 +29,7 @@ else
 	<div class="col-md-7">
 		<section>
 			<form asp-route-returnurl="@ViewData["ReturnUrl"]" method="post" id="LoginForm">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 				<hr />
 				<div class="form-group">
 					<label asp-for="Email"></label>
