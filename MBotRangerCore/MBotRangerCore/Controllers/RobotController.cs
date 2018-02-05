@@ -52,6 +52,7 @@ namespace MBotRangerCore.Controllers
 
         
 
+
         [SessionTimeOut(1)]
         public IActionResult Index(string submit, bool isPublic)
         {
