@@ -31,7 +31,7 @@ namespace MBotRangerCore
         {
           
            
-            services.AddDbContext<MBotRangerCoreContext>(options => options.UseSqlServer(@"Data Source=(localdb)\ProjectsV13;Initial Catalog=MBotRangerCore;Integrated Security=True;Connect Timeout=50;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"));
+            services.AddDbContext<MBotRangerCoreContext>(options => options.UseSqlServer(@"Data Source=tcp:integrifydbserver.database.windows.net,1433;Initial Catalog=MBotRangerCore20180205115100_db;Persist Security Info=False;User ID=ahed;Password=ahed123456!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"));
             services.AddIdentity<ApplicationUser, IdentityRole>(config =>
             {
                 config.SignIn.RequireConfirmedEmail = false;
@@ -85,12 +85,14 @@ namespace MBotRangerCore
             app.UseSession();
             if (env.IsDevelopment())
             {
+                // In Development, use the developer exception page
                 app.UseDeveloperExceptionPage();
-                app.UseBrowserLink();
+                app.UseBrowserLink();   
             }
             else
             {
-                app.UseExceptionHandler(" / Home/Error");
+                // In Staging/Production, route exceptions to /error
+                app.UseExceptionHandler("/Home/Error");
             }
 
             app.UseStaticFiles();           

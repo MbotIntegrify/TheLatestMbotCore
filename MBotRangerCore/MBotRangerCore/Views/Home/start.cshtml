@@ -14,7 +14,7 @@
 <script src="~/js/start_page.js"></script>
 }
 
-        <div style="color:aliceblue;" id="homePageDiv" class="col-md-7">
+<div style="color:aliceblue;" id="homePageDiv" class="col-md-10">
             <h2 class="header-text" style="text-align:center; font-family:Arial;">INTEGRIFY MBOT HOME</h2>
             @if (!SignInManager.IsSignedIn(User))
             {
@@ -69,14 +69,11 @@
             </div>
         </div>
 
-<div class="container col-md-3">
+<div class="container col-md-2">
     <img src="~/images/90092_01.png" class="robotPicture" />
 
 </div>
-        @*<div><p id="timerLog">@ViewBag.TimerLog</p></div>
-        <div><p id="heartBeat">T</p></div>
-        <div><p id="diff">D</p></div>
-        <div><p hidden id="logoutWarn">W</p></div>*@
+
 
 
 @if (SignInManager.IsSignedIn(User))

@@ -6,6 +6,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Properties\PublishProfiles\MBotRangerCore20180201102547 - Web Deploy.pubxml" />
+    <None Remove="Properties\PublishProfiles\MBotRangerCore20180202024835 - Web Deploy.pubxml" />
+    <None Remove="Properties\PublishProfiles\MBotRangerCore20180205105557 - Web Deploy.pubxml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="CloudinaryDotNet" Version="1.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
 
@@ -25,6 +31,10 @@
 
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\PublishProfiles\" />
   </ItemGroup>
 
 </Project>
