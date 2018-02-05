@@ -61,8 +61,8 @@
     </div>
 
         @if (SignInManager.IsSignedIn(User))
-            {
-            <div id="innerDivLogged" class="col-md-2">
+        {
+            <div id="innerDivLogged" class="col-md-12">
                 <h4 style="font-size:larger;"><b>LOGGED IN USERS:</b></h4>
                 @*  <ul>
                         @{int dd = 0;
@@ -123,6 +123,6 @@
         </environment>
 
         @RenderSection("Scripts", required: false)
-
+    </div>
 </body>
 </html>
