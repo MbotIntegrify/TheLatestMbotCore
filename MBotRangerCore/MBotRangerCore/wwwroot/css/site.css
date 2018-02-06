@@ -144,7 +144,6 @@ div[id="aboutID"]{
 #waitingListTable {
     font-family: arial, sans-serif;
    /* font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;*/
-    margin-left: 0px;
     border-collapse: collapse;
     min-width: 250px;
     width: auto;
@@ -191,9 +190,7 @@ div[id="aboutID"]{
 }
    
 
-div[id="homePageDiv"] {
-    margin-top:50px;
-}
+
 
 
 div[id="divLogged"] {
