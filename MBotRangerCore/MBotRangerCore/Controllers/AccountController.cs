@@ -242,7 +242,7 @@ namespace MBotRangerCore.Controllers
 
             await _signInManager.SignOutAsync();
             _logger.LogInformation("User logged out.");
-            return RedirectToAction(nameof(AccountController.Login));
+            return RedirectToAction(nameof(HomeController.Start), "Home");
         }
 
         //When logout button is pressed
@@ -254,7 +254,7 @@ namespace MBotRangerCore.Controllers
 
              await _signInManager.SignOutAsync();
             _logger.LogInformation("User logged out.");
-            return RedirectToAction(nameof(AccountController.Login));
+            return RedirectToAction(nameof(HomeController.Start), "Home");
         }
 
         public void LogoutHelper(string loggedOutEmail)

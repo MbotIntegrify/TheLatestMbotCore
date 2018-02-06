@@ -27,7 +27,7 @@ namespace MBotRangerCore.Controllers
         public RobotController(MbotAppData robotAppData)
         {
             this.robotAppData = robotAppData;
-          
+
         }
 
         [HttpPost]
@@ -41,12 +41,13 @@ namespace MBotRangerCore.Controllers
             return "Unsuccesful";
         }
 
+
         [HttpPost]
         public string MoveRobotArrowsOption(string str)
         {
             if (!string.IsNullOrEmpty(str))
             {
-			    RobotArrows(str);
+                RobotArrows(str);
                 AssignToArduino(str);
 
                 return str;
@@ -58,7 +59,7 @@ namespace MBotRangerCore.Controllers
         [SessionTimeOut(1)]
         public IActionResult Index(string submit, bool isPublic)
         {
-            ViewBag.YouWait = waitListObj.GetWaitingTimeInSeconds(robotAppData.users);
+            ViewBag.GuestWaitTime = waitListObj.GetWaitingTimeInSeconds(robotAppData.users);
             
 
             //Check if the user Logged in
@@ -80,11 +81,12 @@ namespace MBotRangerCore.Controllers
                 rob.IsWaitingUser = true;
                 ViewBag.Public = (robotAppData.IsRobotVideoPublic) ? "Yes" : "No";
 
-                ViewBag.YouWait = waitListObj.GetWaitingTimeInSeconds(robotAppData.users);
+                ViewBag.GuestWaitTime = waitListObj.GetWaitingTimeInSeconds(robotAppData.users);
             }
             //Only the main user can change from public to private or vise versa
             else
             {
+                //rob.IsWaitingUser = false;
                 robotAppData.IsRobotVideoPublic = isPublic;
                 ViewBag.Public = (robotAppData.IsRobotVideoPublic) ? "Yes" : "No";
                 ConstructorAssigner(robotAppData);
