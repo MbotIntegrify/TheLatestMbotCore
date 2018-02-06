@@ -26,6 +26,8 @@ namespace MBotRangerCore.Controllers
 
 
 
+
+        //GET: get the Snapshots for all users
         public IActionResult ImagesView()
         {
             if (!User.Identity.IsAuthenticated)
@@ -45,7 +47,9 @@ namespace MBotRangerCore.Controllers
 
 
 
-        
+
+
+        //POST: Save the snapshot taken by the user
         [HttpPost]
         public async Task<IActionResult> SaveSnapshot()
         {
@@ -70,7 +74,9 @@ namespace MBotRangerCore.Controllers
         }
 
 
-        
+
+
+        //POST: Delete the snapshot taken by the user
         [HttpPost]
         public async Task<IActionResult> DeleteSnapShot(int? id)
         {

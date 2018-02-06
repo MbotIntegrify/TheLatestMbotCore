@@ -75,15 +75,18 @@ webcamStart.addEventListener("click", function () {
    // imageContainer.src = "https://10.130.1.158:8080/video";
     
             video.style.display = "none";   
+
 });
 
 // Stop the Webcam
 webcamStop.addEventListener("click", function () {
+
     imageContainer.style.display = "none";
     imageContainer.src = "";
     video.style.display = "block";   
 
   //  vidOff();
+
 });
 
 function vidOff() {

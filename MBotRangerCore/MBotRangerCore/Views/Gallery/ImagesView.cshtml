@@ -7,11 +7,9 @@
 }
 
 <h2>Gallery</h2>
-@section Scripts
-    {
-<script src="~/js/imageview.js"></script>
+<script src="~/js/galleryimagesview.js"></script>
 <link rel="stylesheet" href="~/css/galleryview.css" />
-        }
+
 
 <div id="picdiv" class="container body-content">
         @foreach (var image in Model.Images)
@@ -36,5 +34,5 @@
             </div>
         }
 
-       
+       <div class="clearfix"></div>
     </div>
