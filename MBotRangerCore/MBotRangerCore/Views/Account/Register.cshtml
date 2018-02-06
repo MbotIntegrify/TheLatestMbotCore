@@ -55,6 +55,15 @@
    
 </div>
 
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <ul class="nav navbar-nav navbar-left">
+            <li><a asp-area="" asp-controller="Home" asp-action="Start"><b>Home</b></a></li>
+            <li><a asp-area="" asp-controller="Home" asp-action="About"><b>About</b></a></li>
+        </ul>
+    </div>
+</nav>
+
 @section Scripts {
     @await Html.PartialAsync("_ValidationScriptsPartial")
 }

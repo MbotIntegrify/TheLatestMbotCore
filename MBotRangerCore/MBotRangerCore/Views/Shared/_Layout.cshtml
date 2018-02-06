@@ -5,11 +5,12 @@
     @inject UserManager<ApplicationUser> UserManager
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - MBotRangerCore</title>
+    <title>@ViewData["Title"] MBotRangerCore</title>
 
     <environment include="Development">
-        <link rel="stylesheet" href='@Url.Content("~/lib/bootstrap/dist/css/bootstrap.css")' />
-        <link rel="stylesheet" href='@Url.Content("~/css/site.css")' />
+        <link type="text/css" rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link type="text/css" rel="stylesheet" href="~/css/site.css" />
+
     </environment>
     <environment exclude="Development">
         <link rel="stylesheet" href='@Url.Content("https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css")'
@@ -123,6 +124,11 @@
         </environment>
 
         @RenderSection("Scripts", required: false)
+     
+
+
+
+
     </div>
 </body>
 </html>

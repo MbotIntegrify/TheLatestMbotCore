@@ -6,7 +6,7 @@
 
 
 @{
-	ViewData["Title"] = "Log in";
+    ViewData["Title"] = "Log in";
 }
 
 
@@ -15,61 +15,69 @@
 
 @if (0.Equals(ViewData["UserLoggedInNumber"]))
 {
-	<h5><b>No</b> users are logged in right now</h5>
+    <h5><b>No</b> users are logged in right now</h5>
 }
 else if (1.Equals(ViewData["UserLoggedInNumber"]))
 {
-	<h5><b>One</b> user is logged in right now</h5>
+    <h5><b>One</b> user is logged in right now</h5>
 }
 else
 {
-	<h5><b>@ViewData["UserLoggedInNumber"]</b> users are logged in right now</h5>
+    <h5><b>@ViewData["UserLoggedInNumber"]</b> users are logged in right now</h5>
 }
 <div class="row">
-	<div class="col-md-7">
-		<section>
-			<form asp-route-returnurl="@ViewData["ReturnUrl"]" method="post" id="LoginForm">
+    <div class="col-md-7">
+        <section>
+            <form asp-route-returnurl="@ViewData["ReturnUrl"]" method="post" id="LoginForm">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-				<hr />
-				<div class="form-group">
-					<label asp-for="Email"></label>
-					<input asp-for="Email" class="form-control" />
-					<span asp-validation-for="Email" class="text-danger"></span>
-				</div>
-				<div class="form-group">
-					<label asp-for="Password"></label>
-					<input asp-for="Password" class="form-control" />
-					<span asp-validation-for="Password" class="text-danger"></span>
-				</div>
-				<div class="form-group">
-					<div class="checkbox">
-						<label asp-for="RememberMe">
-							<input asp-for="RememberMe" />
-							@Html.DisplayNameFor(m => m.RememberMe)
-						</label>
-					</div>
-				</div>
-                
-				<div class="submit">
-					<button id="logInID" type="submit" class="btn btn-info">Log in</button>
-				</div>
-				<div class="form-group">
+                <hr />
+                <div class="form-group">
+                    <label asp-for="Email"></label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Password"></label>
+                    <input asp-for="Password" class="form-control" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <div class="checkbox">
+                        <label asp-for="RememberMe">
+                            <input asp-for="RememberMe" />
+                            @Html.DisplayNameFor(m => m.RememberMe)
+                        </label>
+                    </div>
+                </div>
+
+                <div class="submit">
+                    <button id="logInID" type="submit" class="btn btn-info">Log in</button>
+                </div>
+                <div class="form-group">
                     <br />
-					<p>
-						<a asp-action="ForgotPassword" asp-route-returnurl="@ViewData["ReturnUrl"]">Forogt Password?</a>
-					</p>
-					<p>
-						<a asp-action="Register" asp-route-returnurl="@ViewData["ReturnUrl"]">Register as a new user?</a>
-					</p>
-				</div>
-			</form>
-		</section>
-	</div>
+                    <p>
+                        <a asp-action="ForgotPassword" asp-route-returnurl="@ViewData["ReturnUrl"]">Forogt Password?</a>
+                    </p>
+                    <p>
+                        <a asp-action="Register" asp-route-returnurl="@ViewData["ReturnUrl"]">Register as a new user?</a>
+                    </p>
+                </div>
+            </form>
+        </section>
+    </div>
 </div>
 
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <ul class="nav navbar-nav navbar-left">
+            <li><a asp-area="" asp-controller="Home" asp-action="Start"><b>Home</b></a></li>
+            <li><a asp-area="" asp-controller="Home" asp-action="About"><b>About</b></a></li>
+        </ul>
+        </div>
+ </nav>
 
-@section Scripts {
-	<script src="~/js/robot_main_jquery.js"></script>
-	@await Html.PartialAsync("_ValidationScriptsPartial")
+        @section Scripts {
+            <script src="~/js/robot_main_jquery.js"></script>
+            @await Html.PartialAsync("_ValidationScriptsPartial")
 
-}
+        }
