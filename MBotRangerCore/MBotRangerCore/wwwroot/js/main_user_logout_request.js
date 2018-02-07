@@ -3,7 +3,7 @@ var temptime = document.getElementById("mainUserWaitSeconds").innerHTML;
     var timerLogOut = temptime * 1000;
     //When main user has maximum time to control the robot
     if (timerLogOut > 700000)
-        var intialWarn = 1000;
+        var intialWarn = 100000;
     //When main user has limited time since there is someone else who would like to access robot page
     else
         var intialWarn = 1000;
