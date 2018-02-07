@@ -91,6 +91,11 @@ hr[id="bottomLine"] {
     line-height: 1.4;
 }
 
+/* Make .svg files in the carousel display properly in older browsers */
+.carousel-inner .item img[src$=".svg"] {
+    width: 100%;
+}
+
 /* QR code generator */
 #qrCode {
     margin: 15px;
@@ -126,19 +131,20 @@ div[id="aboutID"]{
 }
 
 .header-text {
-    font-size: 40px;
+    font-size: 50px;
     font-weight: 700;
     color: white;
     font-family: 'Segoe UI', SegoeUI, "Helvetica Neue";
     text-shadow: 1px 1px 1px #000;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: black;
+    position: absolute;
     padding: 10px;
 }
 
- #waitingListTable {
-
-    margin-left:0;
+#waitingListTable {
+    font-family: arial, sans-serif;
+   /* font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;*/
     border-collapse: collapse;
     min-width: 250px;
     width: auto;
@@ -227,35 +233,29 @@ td, th {
 }
    
 
-div[id="homePageDiv"] {
-    margin-top:-65px;
-}
+
 
 
 div[id="divLogged"] {
-  
+    position: static;
     height: 1300px;
+    min-width: 240px; /*added on 23 january*/
+    max-width: 250px; /*added on 23 january*/
     background-color: #000;
 }
 
-#divLogged h4 {
-    font-size: smaller;
-    margin-left: 10px;
-color:white;
 
-}
 #divLogged tr:hover {
     background-color:darkslategray;
 }
-
 div[id="innerDivLogged"] {
     position: fixed;
-    z-index:1000;
-    margin-top: -1110px;
+    margin-top: 180px;
     background-color: black;
-    width: 235px;
-    /*width: 100%;*/
-    margin-left: -13px;
+    height: 400px;
+    width:235px;
+    /*width: 100%; added on 23 january*/
+    margin-left: -30px;
 }
 
 #innerDivLogged h5 {
