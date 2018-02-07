@@ -24,13 +24,7 @@ namespace XUnitMbot
             Assert.NotNull(result);
         }
 
-        [Fact]
-        public void TestNotNullMobileCam()
-        {
-            var mobcam = new MobileCamController();
-            ViewResult result = mobcam.Index() as ViewResult;
-            Assert.NotNull(result);
-        }
+       
 
         [Fact]
         //Testing if the Relaodcam Action returns expected view

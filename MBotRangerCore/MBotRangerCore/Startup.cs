@@ -29,8 +29,9 @@ namespace MBotRangerCore
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-          
-           
+            
+            //services.AddDbContext<MBotRangerCoreContext>(options => options.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=MBotRangerCore;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"));
+
             services.AddDbContext<MBotRangerCoreContext>(options => options.UseSqlServer(@"Data Source=tcp:integrifydbserver.database.windows.net,1433;Initial Catalog=MBotRangerCore20180205115100_db;Persist Security Info=False;User ID=bratland;Password=SaltedCaramel1!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"));
             services.AddIdentity<ApplicationUser, IdentityRole>(config =>
             {
