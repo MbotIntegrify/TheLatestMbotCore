@@ -38,10 +38,24 @@ function PublicPrivate(_isPublic) {
 
 
 
+//Buttons
+var forward_Button = document.getElementById('forwardBtn');
+var left_Button = document.getElementById('leftBtn');
+var right_Button = document.getElementById('rightBtn');
+var back_Button = document.getElementById('backBtn');
+var stop_Button = document.getElementById('stopBtn');
+
+forward_Button.disabled = true;
+left_Button.disabled = true;
+right_Button.disabled = true;
+back_Button.disabled = true;
+stop_Button.disabled = true;
+
+
 var popCanvas = document.getElementById('popupCanvas');
 var popContext = popCanvas.getContext('2d');
 var captureByModal = document.getElementById("captureModal");
-
+captureByModal.disabled = true;
 
 //This file is for streaming from the webcam.
 var localstream;
@@ -49,12 +63,11 @@ var localstream;
 // Display containers
 var video = document.getElementById('videoM');
 var imageContainer = document.getElementById('imageContainer');
-imageContainer.style.display = "none";
-
 
 // Buttons
 var webcamStart = document.getElementById("webcamM");
 var webcamStop = document.getElementById("stopM");
+webcamStop.disabled = true;
 
 // Get the webcam and start it
 /*
@@ -70,20 +83,37 @@ webcamStart.addEventListener("click", function () {
 });*/
 
 webcamStart.addEventListener("click", function () {
-    imageContainer.style.display = "block";
     imageContainer.src = "http://192.168.1.81:8080/video";
    // imageContainer.src = "https://10.130.1.158:8080/video";
+    captureByModal.disabled = false;
+    forward_Button.disabled = false;
+    left_Button.disabled = false;
+    right_Button.disabled = false;
+    back_Button.disabled = false;
+    stop_Button.disabled = false;
+    webcamStop.disabled = false;
+    webcamStart.disabled = true;
+
     
-            video.style.display = "none";   
+            
 
 });
 
 // Stop the Webcam
 webcamStop.addEventListener("click", function () {
 
-    imageContainer.style.display = "none";
-    imageContainer.src = "";
-    video.style.display = "block";   
+    
+    imageContainer.src = "../images/videoMsg.png";
+    captureByModal.disabled = true;
+    forward_Button.disabled = true;
+    left_Button.disabled = true;
+    right_Button.disabled = true;
+    back_Button.disabled = true;
+    stop_Button.disabled = true;
+    webcamStop.disabled = true;
+    webcamStart.disabled = false;
+
+    
 
   //  vidOff();
 

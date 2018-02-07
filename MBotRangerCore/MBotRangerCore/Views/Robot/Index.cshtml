@@ -44,8 +44,7 @@
                 canvas size on js file should be the same with cshtml file to avoid croping*@
             <div id="divVideo" class="col-md-8">
 
-                <img src="~/images/sample.gif" id="imageContainer" width="720" height="500" crossorigin="anonymous"/>
-                <video src="~/images/video.mp4" controls loop muted id="videoM" width="720" height="500" autoplay></video>
+                <img src="~/images/videoMsg.png" id="imageContainer" width="740" height="500" crossorigin="anonymous"/>
             
                   </div>
 
@@ -89,21 +88,23 @@
 
         <!--Camera control options-->
         <div class="row">
-            <div class="col-md-2">
-                <input id="webcamM" type="submit" name="cam" value="Start" />
+            <div class="col-md-3">
+                <input style="width:150px;" id="webcamM" type="submit" name="cam" value="Start" />
             </div>
-            <div class="col-md-2">
-                <input id="stopM" type="submit" name="cam" value="Stop" />
+            <div class="col-md-3">
+                <input style="width:150px;" id="captureModal" type="submit" name="cam" value="Capture" />
             </div>
-            <div class="col-md-2">
-                <input id="captureModal" type="submit" name="cam" value="Capture" />
+            <div class="col-md-3">
+                <input style="width:150px;" id="stopM" type="submit" name="cam" value="Stop" />
             </div>
+            
+            @*
             <div class="col-md-2">
                 @using (Html.BeginForm("Index", "Robot"))
                 {
                     <input id="buttonWebcam" type="submit" name="cam" value="Reload" />
                 }
-            </div>
+            </div> *@
         </div>
 
 

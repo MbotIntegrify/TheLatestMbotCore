@@ -1,4 +1,5 @@
 ﻿///Start page Author details
+/*
 var author1 = document.getElementById("author1");
 var author2 = document.getElementById("author2");
 var author3 = document.getElementById("author3");
@@ -36,7 +37,7 @@ function ShowHideAuthorInfo(infoId) {
 }
 
 
-
+*/
 
 ///Hearbeat
 var start = Date.now();
