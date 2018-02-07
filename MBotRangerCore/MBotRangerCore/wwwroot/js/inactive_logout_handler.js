@@ -1,6 +1,6 @@
 ﻿//The time is in milliseconds
-var maxInactiveTime = 100000; //TODO change to large number in normal condition
-var warnAfterThisTime = 10000;
+var maxInactiveTime = 10000700; //TODO change to large number in normal condition
+var warnAfterThisTime = 100000;
 var remainingTime = (maxInactiveTime - warnAfterThisTime) / 1000; //Change milliseconds to seconds
 var intervalRemainingTime = remainingTime;
 
