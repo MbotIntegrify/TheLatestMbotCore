@@ -17,7 +17,7 @@
     </div>
     <div id="div_homePageInfo">
         <h4>The project is done on Makeblock's Mbot ranger robot kit.</h4>
-        <h4>For brief detail about the project, please watch the video below.</h4>
+     @*   <h4>For brief detail about the project, please watch the video below.</h4> *@
     </div>
 </div>
 @if (!SignInManager.IsSignedIn(User))
@@ -36,12 +36,10 @@
     <div id="div_authorInfoInner" class="row">
         <h1 id="textAuthor">Project Members</h1>
         <h1 id="line">_________________________________________________________</h1>
-
-
         <div  class="col-md-3">
-        <a target="_blank" href="https://www.linkedin.com/in/ahed-abusharekh-b8751123/"><img src="~/images/authors/Ahed.jpg" /></a>
-        <h4 id="author1"><b>Ahed AbuSharekh</b></h4>   
-    </div>
+          <a target="_blank" href="https://www.linkedin.com/in/ahed-abusharekh-b8751123/"><img src="~/images/authors/Ahed.jpg" /></a>
+          <h4 id="author1"><b>Ahed AbuSharekh</b></h4>   
+        </div>
         
         <div class="col-md-3">
             <a target="_blank" href="https://www.linkedin.com/in/daneybm/"><img src="~/images/authors/Daney.png" /></a>
@@ -59,36 +57,37 @@
         </div>
         <div class="row">
             <div  class="col-md-3">
-                <p id="detail1">0729245124
-                <br><a target="_blank" href="mailto:daneymail@gmail.com">E-mail Ahed</a>
+                <p id="detail1">+46-729 245124
+                <br><a target="_blank" href="mailto:ahedali@gmail.com">ahedali@gmail.com</a>
                     <br><a target="_blank" href="https://www.linkedin.com/in/ahed-abusharekh-b8751123/">Linkedin</a>
                 </p>
             </div>
             <div class="col-md-3">
-                <p id="detail2">0723346129
-                    <br><a target="_blank" href="mailto:daneymail@gmail.com">E-mail Daniel</a>
+                <p id="detail2">+46-723 346129
+                    <br><a target="_blank" href="mailto:daneymail@gmail.com">daneymail@gmail.com</a>
                     <br><a target="_blank" href="https://www.linkedin.com/in/daneybm/">Linkedin</a>
                 </p>
             </div>
             <div class="col-md-3">
-                <p  id="detail3">0722888085
-                <br><a target="_blank" href="mailto:daneymail@gmail.com">E-mail Karam</a>
+                <p  id="detail3">+46-722 888085
+                <br><a target="_blank" href="mailto:karamfikre@gmail.com">karamfikre@gmail.com</a>
                     <br><a target="_blank" href="https://www.linkedin.com/in/karam-aldulaimi-a84538150/">Linkedin</a>
                 </p>
             </div>
             <div  class="col-md-3">
-                <p id="detail4">0706517871
-                <br><a target="_blank" href="mailto:daneymail@gmail.com">E-mail Torbjörn</a>
+                <p id="detail4">+46-706 517871
+                <br><a target="_blank" href="mailto:torbjorneinegren@hotmail.com">torbjorneinegren@hotmail.com</a>
                     <br><a target="_blank" href="https://www.linkedin.com/in/torbjorneinegren/">Linkedin</a>
                 </p>
             </div>
         </div>
         </div>
     
-    <div><p id="timerLog">@ViewBag.TimerLog</p></div>
-    <div><p id="heartBeat">T</p></div>
-    <div><p id="diff">D</p></div>
+   @*
+    <div><p hidden id="heartBeat">T</p></div>
+    <div><p hidden id="diff">D</p></div>
     <div><p hidden id="logoutWarn">W</p></div>
+*@
 </div>
 
 @if (SignInManager.IsSignedIn(User))
@@ -108,12 +107,12 @@ else
         <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <ul class="nav navbar-nav navbar-left">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Start"><b>Home</b></a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About"><b>About</b></a></li>
+                    <li><a style="color:white" asp-area="" asp-controller="Home" asp-action="Start"><b>Home</b></a></li>
+                    <li><a style="color:white" asp-area="" asp-controller="Home" asp-action="About"><b>About</b></a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a asp-area="" asp-controller="Account" asp-action="Login">Login</a></li>
-                    <li><a asp-area="" asp-controller="Account" asp-action="Register">Register</a></li>
+                    <li><a style="color:white" asp-area="" asp-controller="Account" asp-action="Login">Login</a></li>
+                    <li><a style="color:white" asp-area="" asp-controller="Account" asp-action="Register">Register</a></li>
                 </ul>
             </div>
         </nav>

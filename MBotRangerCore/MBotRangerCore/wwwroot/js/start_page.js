@@ -39,6 +39,7 @@ function ShowHideAuthorInfo(infoId) {
 
 */
 
+/*
 ///Hearbeat
 var start = Date.now();
 var hBeat = document.getElementById("heartBeat");
@@ -65,3 +66,4 @@ function CheckDifference(i, h) {
 
 window.onbeforeunload = function () { alert('beforeclosing'); };
 window.onunload = function () { alert('closing'); };
+*/

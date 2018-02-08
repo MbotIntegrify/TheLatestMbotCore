@@ -22,10 +22,10 @@
 }
 <script src="~/lib/jquery/dist/jquery.js"></script>
 
-<div><h4 id="logoutWarnIDLE" style="text-align:end; color:saddlebrown;">I</h4></div>
+<div><h4 id="logoutWarnIDLE" style="text-align:end; color:burlywood;">I</h4></div>
 @if (!@Model.IsWaitingUser)
 {
-    <div><h3 id="logoutWarn" style="text-align:end"></h3></div>
+    <div><h3 id="logoutWarn" style="text-align:end; color:burlywood;"></h3></div>
     <div class="togglePrivate" style="color:white; background-color:black; border-radius:5px; width:154px; height:29px;">
         <input style="float:left; margin-left:2px; background-color:green;  color:white; border-top-left-radius:5px; border-bottom-left-radius:5px;" id="private" type="button" value="Private"/>
         <input style="background-color:black; color:#262222; border-top-right-radius:5px; border-bottom-right-radius:5px;" id="public" type="button" value="Public"/>
@@ -44,7 +44,7 @@
                 canvas size on js file should be the same with cshtml file to avoid croping*@
             <div id="divVideo" class="col-md-8">
 
-                <img src="~/images/videoMsg.png" id="imageContainer" width="740" height="500" crossorigin="anonymous"/>
+                <img src="~/images/robotStart_gif.gif"  id="imageContainer" width="740" height="500" crossorigin="anonymous"/>
             
                   </div>
 
@@ -130,29 +130,36 @@
         <p>@ViewData["msg"]</p>
 
         <div><p id="unload"></p></div>
+        @*
         <div><p>Keys Change </p><span id="msg" /></div>
         <div><p>Arrows Change </p><span id="msg2" /></div>
-
-        <div><p id="timerLog">@ViewBag.TimerLog</p></div>
-        <div><p id="mainUserWaitSeconds">@ViewBag.GuestWaitTime</p></div>
+        *@
+     
+        <div><p hidden id="mainUserWaitSeconds">@ViewBag.GuestWaitTime</p></div>
         <div><p>@ViewBag.Time</p></div>
 
 
 }
 else if (@ViewBag.Public == "Yes")
 {
-     <h1>You are Viewing the video as A guest!</h1>
+     <h1>You are viewing the video as a guest!</h1>
     <div id="divVideoGuest" class="col-md-8">
-        <img src="http://192.168.1.81:8080/video" id="imageContainer" width="720" height="500" crossorigin="anonymous" />
-    </div>
+        @*<img src="~/images/sample.gif" id="imageContainerGuest" width="720" height="500" crossorigin="anonymous" />
+        *@
+            <img src="http://192.168.1.104:8080/video" alt="Image not found" onerror="this.src='../images/sample.gif';" width="720" height="500" crossorigin="anonymous"  />
+        
+            </div>
 }
 else
 {
     <div style="margin-top:200px;">
     
-   <h1>Waiting Time:</h1>
-   <h3>Number of Users Infront of you: @ViewBag.NoOF_Users</h3>
-   <h3>Time left for first User (in seconds):</h3>
-   <h3 id="guestWaitTime" style="font-size:50px;">@ViewBag.GuestWaitTime</h3>
+   
+   <h3>The robot page is in PRIVATE mode. <br><br>Please wait for your turn to access the robot page. 
+        There is <b> @ViewBag.NoOF_Users </b> 
+        user before you right now.
+   </h3>
+   <h3 style="margin-top:60px; color:burlywood;">Time left for first user</h3>
+   <h3 id="guestWaitTime" style="font-size:70px; color:burlywood;">@ViewBag.GuestWaitTime</h3>
         </div>
 }

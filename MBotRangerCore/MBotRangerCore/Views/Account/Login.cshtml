@@ -61,14 +61,25 @@ else
 						<a asp-action="Register" asp-route-returnurl="@ViewData["ReturnUrl"]">Register as a new user?</a>
 					</p>
 				</div>
+                
+   
+                
 			</form>
 		</section>
 	</div>
 </div>
+<div>
+    @using (Html.BeginForm("start", "Home"))
+    {
+        <input style="opacity:0.5; background: #14fcbc; border:none; border-radius:5px; color: #000000; font-weight: bolder; width: 100px; height: 40px;" id="backToStartPage" type="submit" value="Back to Start" />
+    }
+</div>
+
 
 
 @section Scripts {
 	<script src="~/js/robot_main_jquery.js"></script>
+
 <script src="~/js/main_user_logout_request.js"></script>
 	@await Html.PartialAsync("_ValidationScriptsPartial")
 
