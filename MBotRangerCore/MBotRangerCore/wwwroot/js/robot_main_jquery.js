@@ -20,7 +20,7 @@ $('#stopBtn').click(function () {
 function RobotBtnOptions(_option) {
     var url = "/Robot/MoveRobotOption";
     $.post(url, { option: _option }, function (data) {
-        $("#msg").html(data);
+     //   $("#msg").html(data);
     });
 }
 

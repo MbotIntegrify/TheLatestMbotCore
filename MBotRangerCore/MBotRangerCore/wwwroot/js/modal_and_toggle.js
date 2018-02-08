@@ -64,6 +64,8 @@ var localstream;
 var video = document.getElementById('videoM');
 var imageContainer = document.getElementById('imageContainer');
 
+
+
 // Buttons
 var webcamStart = document.getElementById("webcamM");
 var webcamStop = document.getElementById("stopM");
@@ -82,9 +84,10 @@ webcamStart.addEventListener("click", function () {
     }
 });*/
 
+
 webcamStart.addEventListener("click", function () {
-    imageContainer.src = "http://192.168.1.81:8080/video";
-   // imageContainer.src = "https://10.130.1.158:8080/video";
+  
+    imageContainer.src = "http://192.168.1.104:8080/video";
     captureByModal.disabled = false;
     forward_Button.disabled = false;
     left_Button.disabled = false;
@@ -92,18 +95,17 @@ webcamStart.addEventListener("click", function () {
     back_Button.disabled = false;
     stop_Button.disabled = false;
     webcamStop.disabled = false;
-    webcamStart.disabled = true;
-
-    
+   // webcamStart.disabled = true;
             
 
 });
+
 
 // Stop the Webcam
 webcamStop.addEventListener("click", function () {
 
     
-    imageContainer.src = "../images/videoMsg.png";
+    imageContainer.src = "../images/robotStart_gif.gif";
     captureByModal.disabled = true;
     forward_Button.disabled = true;
     left_Button.disabled = true;
@@ -112,8 +114,6 @@ webcamStop.addEventListener("click", function () {
     stop_Button.disabled = true;
     webcamStop.disabled = true;
     webcamStart.disabled = false;
-
-    
 
   //  vidOff();
 
