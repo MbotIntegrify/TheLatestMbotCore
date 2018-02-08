@@ -100,7 +100,6 @@ namespace MBotRangerCore.Controllers
             ViewBag.NoOF_Users = robotAppData.users.FindIndex(a => a.Email == loggedInUser);
             robotAppData.TimerForLogout = waitListObj.getLogoutTime(robotAppData.users, robotAppData.users.Count);
 
-            ViewBag.TimerLog = robotAppData.TimerForLogout;
             ViewBag.WaitList = robotAppData.users;
 
             AssignToArduino(submit);

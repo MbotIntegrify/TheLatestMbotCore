@@ -229,9 +229,9 @@ td, th {
         padding-top: 12px;
         padding-bottom: 12px;
         text-align: left;
-        background-color: #4CAF50;
+        background-color: #888;
 }
-   
+
 
 
 
@@ -241,7 +241,7 @@ div[id="divLogged"] {
     height: 1300px;
     min-width: 240px; /*added on 23 january*/
     max-width: 250px; /*added on 23 january*/
-    background-color: #000;
+    background-color: #111111;
 }
 
 
@@ -251,9 +251,9 @@ div[id="divLogged"] {
 div[id="innerDivLogged"] {
     position: fixed;
     margin-top: 180px;
-    background-color: black;
+    background-color: #111111;
     height: 400px;
-    width:235px;
+    width: 235px;
     /*width: 100%; added on 23 january*/
     margin-left: -30px;
 }
