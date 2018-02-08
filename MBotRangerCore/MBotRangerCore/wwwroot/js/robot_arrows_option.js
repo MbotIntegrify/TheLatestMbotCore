@@ -22,7 +22,7 @@ function KeyOptions(_option) {
         tempString = _option;
         var url = "/Robot/MoveRobotArrowsOption";
         $.post(url, { str: _option }, function (data) {
-            $("#msg2").html(data);
+          //  $("#msg2").html(data);
         });
     }
 }

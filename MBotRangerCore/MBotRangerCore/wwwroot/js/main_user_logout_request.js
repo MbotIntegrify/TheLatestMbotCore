@@ -2,17 +2,16 @@
 var temptime = document.getElementById("mainUserWaitSeconds").innerHTML;
     var timerLogOut = temptime * 1000;
     //When main user has maximum time to control the robot
-    if (timerLogOut > 700000)
-        var intialWarn = 100000;
+    if (timerLogOut > 3600000)
+        var intialWarn = 3590000;
     //When main user has limited time since there is someone else who would like to access robot page
-    else
-        var intialWarn = 1000;
+    else {
+        var intialWarn = 3000; 
+       // var intialWarn = 300000; //For DEMO
+    }
     var warnSeconds = (timerLogOut - intialWarn) / 1000;
 
 
-    //var timerLogOut = document.getElementById("timerLog").innerHTML;
-    //var intialWarn = 5000;
-    //var warnSeconds = (timerLogOut - intialWarn) / 1000;
     var interSeconds = warnSeconds;
     var logOutMsg;
 
@@ -24,7 +23,7 @@ var temptime = document.getElementById("mainUserWaitSeconds").innerHTML;
 function autoLogout() {
     var timeIdle;
     var warnTime;
-    if (timerLogOut > 700000) {
+    if (timerLogOut > 3600000) {
         window.onload = resetTimer;
         window.onmousemove = resetTimer;
         window.onmousedown = resetTimer;
@@ -48,7 +47,17 @@ function autoLogout() {
     var varForSetInterval;
     function warn() {
         varForSetInterval = setInterval(function () {
-            document.getElementById("logoutWarn").innerHTML = logOutMsg + interSeconds + " seconds";
+
+            var timeInHours = Math.floor(interSeconds / 3600);
+            var timeInMinutes = Math.floor((interSeconds % 3600) / 60);
+            var timeInSeconds = Math.floor(interSeconds % 60);
+
+            if (timeInHours < 10) timeInHours = "0" + timeInHours;
+            if (timeInMinutes < 10) timeInMinutes = "0" + timeInMinutes;
+            if (timeInSeconds < 10) timeInSeconds = "0" + timeInSeconds;
+            var timeAll = timeInHours + " : " + timeInMinutes + " : " + timeInSeconds;
+
+            document.getElementById("logoutWarn").innerHTML = logOutMsg + timeAll;
             //  document.getElementById("GuestWaitTime").innerHTML = interSeconds + " seconds";
             //$("#logoutWarn").clone().appendTo("#logoutWarn");
 
