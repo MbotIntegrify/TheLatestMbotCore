@@ -1,6 +1,11 @@
 ﻿var guest_WaitTime = document.getElementById("guestWaitTime").innerHTML;
+
 var initialWaitSeconds = guest_WaitTime;
 if (guest_WaitTime !== null) {
+    /*
+    if (guest_WaitTime < 310) {
+        mainUserFunction(1);
+    }*/
     setInterval(function () {
 
         var timeInHours = Math.floor(initialWaitSeconds / 3600);
@@ -18,6 +23,10 @@ if (guest_WaitTime !== null) {
         initialWaitSeconds--;
         if (initialWaitSeconds  < 1) {
             document.getElementById("guestWaitTime").innerHTML = "Refreshing";
+            window.location = '/Robot/Index';
+        }
+
+        if (initialWaitSeconds == 10) {
             window.location = '/Robot/Index';
         }
     }, 1000);

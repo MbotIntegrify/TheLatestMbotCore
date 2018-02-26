@@ -86,8 +86,14 @@ webcamStart.addEventListener("click", function () {
 
 
 webcamStart.addEventListener("click", function () {
-  
-    imageContainer.src = "http://192.168.1.104:8080/video";
+
+    try {
+        imageContainer.src = "http://192.168.1.81:8080/video";
+    }
+    catch (err) {
+        imageContainer.src = "../images/robotStart.jpg";
+    }
+   
     captureByModal.disabled = false;
     forward_Button.disabled = false;
     left_Button.disabled = false;

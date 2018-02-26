@@ -39,11 +39,12 @@ function ShowHideAuthorInfo(infoId) {
 
 */
 
-/*
+
 ///Hearbeat
 var start = Date.now();
 var hBeat = document.getElementById("heartBeat");
 var diff = document.getElementById("diff");
+var logMsg = document.getElementById("logoutWarn");
 hBeat.innerHTML = start;
 var intial;
 setInterval(myFunction, 5000);
@@ -63,7 +64,36 @@ function CheckDifference(i, h) {
 }
 
 
+var clicked = false;
+function CheckBrowser() {
+    if (clicked == false) {
+        //Browser closed
+    }
+    else {
+        //redirected 
+        clicked = false;
+    }
+};
 
-window.onbeforeunload = function () { alert('beforeclosing'); };
-window.onunload = function () { alert('closing'); };
-*/
+
+//window.onbeforeunload = function () {
+
+//    var mes = "Are you sure?";
+//    return mes;
+//}
+
+function myFunction() {
+    return "Write something clever here...";
+};
+
+function bodyLoad() {
+    //setInterval every 5 minutes and pass value to contoller.
+    logMsg.innerHTML = "intial";
+}
+
+
+
+
+function GetRequest() {
+    logMsg.innerHTML = "requested";
+} 

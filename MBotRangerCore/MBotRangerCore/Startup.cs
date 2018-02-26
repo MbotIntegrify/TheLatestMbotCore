@@ -59,11 +59,11 @@ namespace MBotRangerCore
                     options.SlidingExpiration = true;
                     options.ExpireTimeSpan = TimeSpan.FromSeconds(600);
                 });
-
+            
 
             services.AddMvc();
             services.AddDistributedMemoryCache();
-          //  services.AddSession();
+          // services.AddSession();
             services.AddSession(options => {
                 options.IdleTimeout = TimeSpan.FromSeconds(600);
             });
@@ -90,7 +90,7 @@ namespace MBotRangerCore
             }
             else
             {
-                app.UseExceptionHandler(" / Home/Error");
+                app.UseExceptionHandler("/Home/Error");
             }
 
             app.UseStaticFiles();           

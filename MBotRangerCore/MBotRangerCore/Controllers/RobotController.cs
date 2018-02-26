@@ -57,6 +57,7 @@ namespace MBotRangerCore.Controllers
         [SessionTimeOut(1)]
         public IActionResult Index(string submit, bool isPublic)
         {
+
             ViewBag.GuestWaitTime = waitListObj.GetWaitingTimeInSeconds(robotAppData.users);
             
 
@@ -77,9 +78,14 @@ namespace MBotRangerCore.Controllers
             if (!isUserSameAsCurrent)
             {
                 rob.IsWaitingUser = true;
-                ViewBag.Public = (robotAppData.IsRobotVideoPublic) ? "Yes" : "No";
-
+                ViewBag.Public = (robotAppData.IsRobotVideoPublic) ? "Yes" : "No";              
                 ViewBag.GuestWaitTime = waitListObj.GetWaitingTimeInSeconds(robotAppData.users);
+
+                //testing closing browser
+                HttpContext.Session.Remove("");
+                // robotAppData.CurrentUser = HttpContext.Session.GetString("User");
+
+
             }
             //Only the main user can change from public to private or vise versa
             else

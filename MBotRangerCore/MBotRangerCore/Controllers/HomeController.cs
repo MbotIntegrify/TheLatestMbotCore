@@ -6,17 +6,17 @@ using System.Diagnostics;
 namespace MBotRangerCore.Controllers
 {
     public class HomeController : Controller
-    {    
+    {
 
         MbotAppData homeAppData;
 
         public HomeController(MbotAppData _homeAppData)
         {
             homeAppData = _homeAppData;
-            
+
         }
 
-
+     
 
 
         public IActionResult Index()
@@ -52,7 +52,17 @@ namespace MBotRangerCore.Controllers
             ViewBag.Session = HttpContext.Session.GetString("User");
             return View();
         }
+
         
+        public IActionResult Test(int? i)
+        {
+           
+            ViewBag.WaitList = homeAppData.users;
+            ViewBag.Session = HttpContext.Session.GetString("User");
+            return View("start");
+        }
+
+
 
 
 

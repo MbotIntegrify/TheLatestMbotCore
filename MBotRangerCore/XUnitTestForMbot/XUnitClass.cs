@@ -89,5 +89,14 @@ namespace XUnitMbot
             Assert.NotNull(result);
         }
 
+        [Fact]
+        //Testing if the Relaodcam Action returns expected view
+        public void TestHomeMethod()
+        {
+            var home = new HomeController(null);
+            var expected = 9;
+            Assert.Equal(expected, home.Sum(4,5));
+        }
+
     }
 }

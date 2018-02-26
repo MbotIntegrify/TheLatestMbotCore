@@ -11,6 +11,7 @@
 <script src="~/js/start_page.js"></script>
 <link rel="stylesheet" href="~/css/start_page.css" />
 }
+<body>
 <div id="mainHomeInfo">
     <div id="div_homePageHeader">
         <h2>MBOT RANGER WEB CONTROLLER</h2>
@@ -67,6 +68,9 @@
                     <br><a target="_blank" href="mailto:daneymail@gmail.com">daneymail@gmail.com</a>
                     <br><a target="_blank" href="https://www.linkedin.com/in/daneybm/">Linkedin</a>
                 </p>
+                <div><p id="heartBeat">T</p></div>
+                <div><p id="diff">D</p></div>
+                <div><p id="logoutWarn">M</p></div>
             </div>
             <div class="col-md-3">
                 <p  id="detail3">+46-722 888085
@@ -83,12 +87,12 @@
         </div>
         </div>
     
-   @*
-    <div><p hidden id="heartBeat">T</p></div>
-    <div><p hidden id="diff">D</p></div>
-    <div><p hidden id="logoutWarn">W</p></div>
-*@
+   
+ 
+
 </div>
+
+
 
 @if (SignInManager.IsSignedIn(User))
 {
@@ -117,3 +121,4 @@ else
             </div>
         </nav>
 }
+</body>

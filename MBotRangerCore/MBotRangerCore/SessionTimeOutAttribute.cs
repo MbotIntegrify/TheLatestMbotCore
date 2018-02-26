@@ -28,8 +28,6 @@ namespace MBotRangerCore
         }
         public override void OnActionExecuting(ActionExecutingContext context)
         {
-
-
             if (mAppData.IsItInUse)
             {
                 if (actionType == 1)
@@ -38,9 +36,6 @@ namespace MBotRangerCore
 
                 }
             }
-           
-
-
             base.OnActionExecuting(context);
         }
 

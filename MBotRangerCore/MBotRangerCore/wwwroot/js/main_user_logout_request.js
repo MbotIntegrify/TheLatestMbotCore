@@ -1,4 +1,13 @@
-﻿
+﻿/*
+function mainUserFunction(val) {
+    if (val == 1) {
+        window.location = '/Robot/Index';
+    }
+    else
+    {
+    }
+};*/
+
 var temptime = document.getElementById("mainUserWaitSeconds").innerHTML;
     var timerLogOut = temptime * 1000;
     //When main user has maximum time to control the robot
