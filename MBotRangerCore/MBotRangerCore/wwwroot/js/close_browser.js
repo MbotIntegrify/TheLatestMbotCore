@@ -1,38 +1,53 @@
 ﻿//var emailToLogOut = document.getElementById("loggedUser").value;
 
+/*
+var arrrrrr = [];
+var array = @Html.Raw(@ViewBag.WaitList);
+for (var i = 0; i < array.length; i++) {
+    arrrrrr[i] = array[i];
+}
+*/
+
+//var theList = document.getElementById("arrayWaitingList").textContent; 
+//var cars = ["Saab", "Volvo", "BMW"];
+//document.getElementById("arrayDisplay").innerHTML = cars;
+
+// Logged in users from the server side. ViewBag/ViewData
+var loggedUsersArray = []; 
+loggedUsersArray.push("a@a.a");
+loggedUsersArray.push("b@b.b");
 
 
-
-var arrayLoggedUsersPages = []; 
-//arrayLoggedUsersPages.push("a@a.a");
-arrayLoggedUsersPages.push("b@b.b");
-
-var arrayUsers = [];
-arrayUsers.push("a@a.a");
-arrayUsers.push("b@b.b");
+// Active users from the client side. from _LoginPartial
+var activeUsers = [];
+activeUsers.push("a@a.a");
+activeUsers.push("b@b.b");
 
 
 
 
 setInterval(function () {
     var counter = 0;
-    for (var pages in arrayLoggedUsersPages) {
-        for (var userMails in arrayUsers) {
-            if (userMails === pages) {
+    for (var i = 0; i < loggedUsersArray.length; i++) {
+        for (var j = 0; j < activeUsers.length; j++ ) {
+            if (loggedUsersArray[i] == activeUsers [j]) {
                 counter++;                
             }
         }
-        if (counter === 0)
+        if (counter == 0)
         {
-            window.location = '/Account/Logout?loggedOutEmail=' + pages;
-            arrayUsers.indexOf(fruits.indexOf(pages));
-            arrayLoggedUsersPages.indexOf(fruits.indexOf(pages));
-            alert("in the if");
+          //  alert("in the if");
+            window.location = '/Account/Logout?loggedOutEmail=' + loggedUsersArray[i];
+    
+            var index = loggedUsersArray.indexOf(loggedUsersArray[i]);
+            if (index > -1) {
+                loggedUsersArray.splice(index, 1);
+            }
+            
         }
-        window.location = '/Account/Logout?loggedOutEmail=' + "a@a.a";
-        alert("out the if");
-        counter == 0;
+        counter = 0;
+      //  alert("outside");
+        
     }
 
-    alert("not fine");
-}, 5000);
+}, 25000);

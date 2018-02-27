@@ -252,11 +252,19 @@ namespace MBotRangerCore.Controllers
         [HttpGet]
         public async Task<IActionResult> Logout(int? notUsedInt, string loggedOutEmail)
         {
-            LogoutHelper(loggedOutEmail);
+            try
+            {
+                LogoutHelper(loggedOutEmail);
 
-            await _signInManager.SignOutAsync();
-            _logger.LogInformation("User logged out.");
-            return RedirectToAction(nameof(HomeController.Start), "Home");
+                 await _signInManager.SignOutAsync();
+                _logger.LogInformation("User logged out.");
+                return RedirectToAction(nameof(HomeController.Start), "Home");
+            } catch (Exception)
+            {
+                
+                return RedirectToAction(nameof(HomeController.Start), "Home");
+            }
+            
         }
 
         //When logout button is pressed
