@@ -21,7 +21,6 @@
     <link rel="stylesheet" href="~/css/robot_main.css" />
 }
 <script src="~/lib/jquery/dist/jquery.js"></script>
-
 <div><h4 id="logoutWarnIDLE" style="text-align:end; color:burlywood;">I</h4></div>
 @if (!@Model.IsWaitingUser)
 {
@@ -153,7 +152,8 @@ else if (@ViewBag.Public == "Yes")
 else
 {
     <div style="margin-top:200px;">
-    
+        <p id="msg"></p>
+        
    
    <h3>The robot page is in PRIVATE mode. <br><br>Please wait for your turn to access the robot page. 
         There is <b> @ViewBag.NoOF_Users </b> 
@@ -161,5 +161,15 @@ else
    </h3>
    <h3 style="margin-top:60px; color:burlywood;">Time left for first user</h3>
    <h3 id="guestWaitTime" style="font-size:70px; color:burlywood;">@ViewBag.GuestWaitTime</h3>
+        <div class="ondisplay">
+            <section >
+                <!-- .soundSlide --><label id="soundText">Turn the sound off</label>
+                <div style="margin-left:50px;" class="soundSlide">
+                    <input type="checkbox" value="None" id="soundCheck" name="check" checked />
+                    <label for="soundCheck"></label>
+                </div>
+                <!-- end .soundSlide -->
+            </section>
+            </div>
         </div>
 }

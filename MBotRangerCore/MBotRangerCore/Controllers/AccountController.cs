@@ -29,10 +29,14 @@ namespace MBotRangerCore.Controllers
         private readonly IEmailSender _emailSender;
         private readonly ILogger _logger;
         private readonly MbotAppData mBotAppVar;
+
+        //Modify the Cloudinary Account for uploading the user profile picture 
         private Account account = new Account(
                                            "dlxazvufc",
                                            "152192368129483",
                                            "gOgstsNVkTW8-lSAj3KptLwmgNM");
+
+
 
         public AccountController( UserManager<ApplicationUser> userManager,
                                   SignInManager<ApplicationUser> signInManager,
@@ -337,9 +341,6 @@ namespace MBotRangerCore.Controllers
                     ModelState.AddModelError(string.Empty, "Email doesn't exist.");
                     return View();
                 }
-
-                // For more information on how to enable account confirmation and password reset please
-                // visit https://go.microsoft.com/fwlink/?LinkID=532713
                 var code = await _userManager.GeneratePasswordResetTokenAsync(user);
                 var callbackUrl = Url.ResetPasswordCallbackLink(user.Id, code, Request.Scheme);
                 await _emailSender.SendEmailAsync(model.Email, "Reset Password",
@@ -459,7 +460,6 @@ namespace MBotRangerCore.Controllers
                
                 _context.Update(user);
                 await _context.SaveChangesAsync();
-            //    return View();
                return RedirectToAction(nameof(HomeController.Start), "Home");
             }
             return View();

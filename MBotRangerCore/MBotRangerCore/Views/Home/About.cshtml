@@ -14,7 +14,8 @@
 
 @if (SignInManager.IsSignedIn(User))
 {
-
+    
+<p>@UserManager.GetUserAsync(User).Result.Email</p>
 
     <div class="row">
 @*
