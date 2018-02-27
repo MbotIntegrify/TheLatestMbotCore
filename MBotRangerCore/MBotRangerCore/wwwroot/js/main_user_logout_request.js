@@ -99,6 +99,16 @@ setInterval(function () {
     $("#waitingListTable").load("/Home/About #waitingListTable");
 }, 5000);
 
+
+
+setInterval(function () {
+    var previous = Date.now;
+    var next = document.getElementById("RightNow").innerHTML;
+    if (previous != temptime) {
+        window.location = '/Robot/Index';
+    }
+}, 15000);
+
 /*
 setInterval(function () {
     $("#mainUserWaitSeconds").load("/Robot/Index #mainUserWaitSeconds");

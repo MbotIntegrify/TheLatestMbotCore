@@ -57,7 +57,7 @@ namespace MBotRangerCore.Controllers
         [SessionTimeOut(1)]
         public IActionResult Index(string submit, bool isPublic)
         {
-
+            ViewBag.RightNow = DateTime.Now;
             ViewBag.GuestWaitTime = waitListObj.GetWaitingTimeInSeconds(robotAppData.users);
             
 
