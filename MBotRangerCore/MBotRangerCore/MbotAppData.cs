@@ -18,6 +18,7 @@ namespace MBotRangerCore
         public List<LoginViewModel> users = new List<LoginViewModel>();
         public string CurrentUser { get; set; }
         public string Distance { get; set; }
+        public long DiffTime { get; set; }
 
 
         public int TimerForLogout { get; set; } = 1500055000;

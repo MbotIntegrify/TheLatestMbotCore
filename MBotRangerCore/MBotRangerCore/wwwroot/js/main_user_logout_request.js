@@ -102,11 +102,20 @@ setInterval(function () {
 
 
 setInterval(function () {
-    var previous = Date.now;
+    var counter = 0;
+    var previous = Date.now();
     var next = document.getElementById("RightNow").innerHTML;
-    if (previous != temptime) {
+    var diff = previous - next;
+   // alert(diff);
+    /*
+    if (diff < 10000 && counter == 0) {
         window.location = '/Robot/Index';
+        counter++;
     }
+    else if (diff>10000){
+        counter = 0;
+    }
+    */
 }, 15000);
 
 /*
